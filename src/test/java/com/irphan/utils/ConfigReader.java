@@ -9,10 +9,15 @@ public class ConfigReader {
 
     static {
         try {
-            FileInputStream fis = new FileInputStream("src/test/resources/config.properties");
+            // Ambil nama file dari parameter -DconfigFile=nama.properties
+            String fileName = System.getProperty("configFile", "config.properties");
+
+            FileInputStream fis = new FileInputStream("src/test/resources/" + fileName);
             props.load(fis);
+            System.out.println("✅ Config loaded: " + fileName);
+
         } catch (IOException e) {
-            System.out.println("❗ Gagal load config.properties: " + e.getMessage());
+            System.out.println("❌ Gagal load konfigurasi: " + e.getMessage());
         }
     }
 

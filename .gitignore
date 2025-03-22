@@ -12,6 +12,7 @@ target/
 *.iml
 *.ipr
 src/test/resources/config.properties
+src/test/resources/config-ci.properties
 
 ### Eclipse ###
 .apt_generated
